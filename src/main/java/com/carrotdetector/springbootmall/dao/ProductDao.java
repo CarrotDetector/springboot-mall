@@ -6,7 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.List;
+
 public interface ProductDao {
+
+    List<Product> getProducts();
+
     Product getProductById(Integer productId);
 
     Integer createProduct(ProductRequest productRequest);
