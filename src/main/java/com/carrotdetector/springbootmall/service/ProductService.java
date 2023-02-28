@@ -1,13 +1,13 @@
 package com.carrotdetector.springbootmall.service;
 
-import com.carrotdetector.springbootmall.constant.ProductCategory;
+import com.carrotdetector.springbootmall.dto.ProductQueryParams;
 import com.carrotdetector.springbootmall.dto.ProductRequest;
 import com.carrotdetector.springbootmall.model.Product;
 
 import java.util.List;
 
 public interface ProductService {
-    List<Product> getProducts(ProductCategory category, String search);
+    List<Product> getProducts(ProductQueryParams productQueryParams);
 
     Product getProductById(Integer productId);
 
