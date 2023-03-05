@@ -6,6 +6,8 @@ import com.carrotdetector.springbootmall.model.User;
 public interface UserDao {
     User getUserById(Integer userId);
 
+    User getUserByEmail(String email);
+
     Integer createUser(UserRegisisterRequest userRegisisterRequest);
 
 }
