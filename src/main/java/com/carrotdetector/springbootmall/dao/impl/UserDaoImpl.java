@@ -67,7 +67,7 @@ public class UserDaoImpl implements UserDao {
 
         Map<String, Object> map = new HashMap<>();
         map.put("email", userRegisisterRequest.getEmail());
-        map.put("password", userRegisisterRequest.getEmail());
+        map.put("password", userRegisisterRequest.getPassword());
 
         Date now = new Date();
         map.put("createdDate", now);
