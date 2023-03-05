@@ -1,6 +1,6 @@
 package com.carrotdetector.springbootmall.dao;
 
-import com.carrotdetector.springbootmall.dto.UserRegisisterRequest;
+import com.carrotdetector.springbootmall.dto.UserRegisterRequest;
 import com.carrotdetector.springbootmall.model.User;
 
 public interface UserDao {
@@ -8,6 +8,6 @@ public interface UserDao {
 
     User getUserByEmail(String email);
 
-    Integer createUser(UserRegisisterRequest userRegisisterRequest);
+    Integer createUser(UserRegisterRequest userRegisterRequest);
 
 }

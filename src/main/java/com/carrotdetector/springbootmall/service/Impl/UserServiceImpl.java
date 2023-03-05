@@ -2,7 +2,7 @@ package com.carrotdetector.springbootmall.service.Impl;
 
 import com.carrotdetector.springbootmall.dao.UserDao;
 import com.carrotdetector.springbootmall.dto.UserLoginRequest;
-import com.carrotdetector.springbootmall.dto.UserRegisisterRequest;
+import com.carrotdetector.springbootmall.dto.UserRegisterRequest;
 import com.carrotdetector.springbootmall.model.User;
 import com.carrotdetector.springbootmall.service.UserService;
 import org.slf4j.Logger;
@@ -27,22 +27,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Integer register(UserRegisisterRequest userRegisisterRequest) {
+    public Integer register(UserRegisterRequest userRegisterRequest) {
 
         // 檢查註冊的email
-        User user = userDao.getUserByEmail(userRegisisterRequest.getEmail());
+        User user = userDao.getUserByEmail(userRegisterRequest.getEmail());
 
         if (user != null) {
-            log.warn("該 email {} 已經被註冊", userRegisisterRequest.getEmail());
+            log.warn("該 email {} 已經被註冊", userRegisterRequest.getEmail());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
 
         // 使用MD5生成密碼的雜湊值
-        String hashedPassword = DigestUtils.md5DigestAsHex(userRegisisterRequest.getPassword().getBytes());
-        userRegisisterRequest.setPassword(hashedPassword);
+        String hashedPassword = DigestUtils.md5DigestAsHex(userRegisterRequest.getPassword().getBytes());
+        userRegisterRequest.setPassword(hashedPassword);
 
         // 創建帳號
-        return userDao.createUser(userRegisisterRequest);
+        return userDao.createUser(userRegisterRequest);
 
     }
 

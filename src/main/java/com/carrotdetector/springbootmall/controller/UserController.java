@@ -1,7 +1,7 @@
 package com.carrotdetector.springbootmall.controller;
 
 import com.carrotdetector.springbootmall.dto.UserLoginRequest;
-import com.carrotdetector.springbootmall.dto.UserRegisisterRequest;
+import com.carrotdetector.springbootmall.dto.UserRegisterRequest;
 import com.carrotdetector.springbootmall.model.User;
 import com.carrotdetector.springbootmall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +18,9 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/users/register")
-    public ResponseEntity<User> register(@RequestBody @Valid UserRegisisterRequest userRegisisterRequest) {
+    public ResponseEntity<User> register(@RequestBody @Valid UserRegisterRequest userRegisterRequest) {
 
-        Integer userId = userService.register(userRegisisterRequest);
+        Integer userId = userService.register(userRegisterRequest);
 
         User user = userService.getUserById(userId);
 
