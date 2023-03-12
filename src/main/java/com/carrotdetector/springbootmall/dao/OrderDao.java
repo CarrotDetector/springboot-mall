@@ -1,11 +1,16 @@
 package com.carrotdetector.springbootmall.dao;
 
+import com.carrotdetector.springbootmall.dto.OrderQueryParams;
 import com.carrotdetector.springbootmall.model.Order;
 import com.carrotdetector.springbootmall.model.OrderItem;
 
 import java.util.List;
 
 public interface OrderDao {
+    Integer countOrder(OrderQueryParams orderQueryParams);
+
+    List<Order> getOrders(OrderQueryParams orderQueryParams);
+
     Order getOrderById(Integer orderId);
 
     List<OrderItem> getOrderItemsByOrderId(Integer orderId);
